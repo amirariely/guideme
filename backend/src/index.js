@@ -12,13 +12,15 @@ import { errorHandler } from './middleware/errorHandler.js'
 const app  = express()
 const PORT = process.env.PORT || 3001
 
-// ── Serve Landing Page ────────────────────────────────────
-app.use(express.static('src/public'))
-app.get('/', (req, res) => res.sendFile('src/public/index.html', { root: '.' }))
 
 // ── Middleware ────────────────────────────────────────────────
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }))
 app.use(express.json())
+
+// ── Serve Landing Page ────────────────────────────────────
+app.use(express.static('src/public'))
+app.get('/', (req, res) => res.sendFile('src/public/index.html', { root: '.' }))
+
 
 // ── Routes ────────────────────────────────────────────────────
 app.use('/api/auth',       authRoutes)
