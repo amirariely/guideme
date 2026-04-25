@@ -1,0 +1,36 @@
+services:
+  # Express Backend API
+  - type: web
+    name: guideme-backend
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm run start
+    envVars:
+      - key: DATABASE_URL
+        scope: all
+      - key: JWT_SECRET
+        scope: all
+        value: your-secret-key-here-change-in-production
+      - key: ANTHROPIC_API_KEY
+        scope: all
+      - key: PORT
+        value: "3001"
+    
+  # React Frontend (served from /app)
+  - type: static_site
+    name: guideme-frontend
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/dist
+    routes:
+      - path: "/app*"
+        destination: "/index.html"
+      
+  # Landing Page (served from /)
+  - type: static_site
+    name: guideme-landing
+    buildCommand: "true"  # no build needed
+    staticPublishPath: landing
+    routes:
+      - path: "/"
+        destination: "/index.html"
