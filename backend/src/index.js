@@ -2,6 +2,10 @@ import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 
+import { fileURLToPath } from 'url'
+import path from 'path'
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
 import authRoutes       from './routes/auth.js'
 import babyRoutes       from './routes/baby.js'
 import activitiesRoutes from './routes/activities.js'
@@ -19,8 +23,7 @@ app.use(express.json())
 
 // ── Serve Landing Page ────────────────────────────────────
 app.use(express.static('src/public'))
-app.get('/', (req, res) => res.sendFile('src/public/index.html', { root: '.' }))
-
+app.get('/', (req, res) => res.sendFile(__dirname + '/public/index.html'))
 
 // ── Routes ────────────────────────────────────────────────────
 app.use('/api/auth',       authRoutes)
