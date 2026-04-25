@@ -23,8 +23,7 @@ app.use(express.json())
 
 // ── Serve Landing Page ────────────────────────────────────
 app.use(express.static('src/public'))
-app.get('/', (req, res) => res.sendFile(__dirname + '/public/index.html'))
-
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')))
 // ── Routes ────────────────────────────────────────────────────
 app.use('/api/auth',       authRoutes)
 app.use('/api/baby',       babyRoutes)
