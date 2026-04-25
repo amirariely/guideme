@@ -22,7 +22,7 @@ app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }))
 app.use(express.json())
 
 // ── Serve Landing Page ────────────────────────────────────
-app.use(express.static('src/public'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')))
 // ── Routes ────────────────────────────────────────────────────
 app.use('/api/auth',       authRoutes)
