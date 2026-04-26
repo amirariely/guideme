@@ -74,7 +74,7 @@ export default function LogActivity() {
   }
 
   return (
-    <div className={`flex flex-col min-h-screen ${bg} transition-colors duration-500`}>
+    <div className={`flex flex-col h-full ${bg} transition-colors duration-500`}>
       <StatusBar light={isDark} />
 
       <ScreenHeader title="Log Activity" showBack />

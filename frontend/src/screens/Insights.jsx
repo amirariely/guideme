@@ -18,7 +18,7 @@ export default function Insights() {
   const { baby } = state
 
   return (
-    <div className="flex flex-col min-h-screen bg-cream">
+    <div className="flex flex-col h-full bg-cream">
       <StatusBar />
 
       <div className="flex-1 overflow-y-auto phone-scroll px-5 pb-4">

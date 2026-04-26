@@ -7,9 +7,13 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  html, body, #root {
+    height: 100%;
+  }
+
   body {
     @apply bg-[#0F1822] font-sans;
-    overflow: hidden;
+    overflow: auto;
   }
 
   /* Hide scrollbars inside phone shell */

@@ -42,7 +42,7 @@ export default function Notifications() {
   const unreadBg = isDark ? 'bg-sage-dark/20 border-sage/30' : 'bg-sage-light/30 border-sage/30'
 
   return (
-    <div className={`flex flex-col min-h-screen ${bg} transition-colors duration-500`}>
+    <div className={`flex flex-col h-full ${bg} transition-colors duration-500`}>
       <StatusBar light={isDark} />
 
       <div className="flex items-center justify-between px-6 pb-3 flex-shrink-0">
