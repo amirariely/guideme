@@ -26,7 +26,7 @@ export default function Login() {
   }
 
   return (
-    <div className="flex flex-col h-full bg-cream">
+    <div className="flex flex-col min-h-screen bg-cream">
       <StatusBar />
       <div className="flex-1 flex flex-col px-7 pt-4">
         <button onClick={() => navigate('/')} className="text-steel text-sm mb-8 text-left">← Back</button>

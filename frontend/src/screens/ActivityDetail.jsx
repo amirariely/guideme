@@ -20,7 +20,7 @@ export default function ActivityDetail() {
 
   if (!activity) {
     return (
-      <div className={`flex flex-col h-full ${bg}`}>
+      <div className={`flex flex-col min-h-screen ${bg}`}>
         <StatusBar light={isDark} />
         <div className="flex-1 flex flex-col items-center justify-center gap-3">
           <span className="text-4xl">🤷</span>
@@ -43,7 +43,7 @@ export default function ActivityDetail() {
   }
 
   return (
-    <div className={`flex flex-col h-full ${bg} transition-colors duration-500`}>
+    <div className={`flex flex-col min-h-screen ${bg} transition-colors duration-500`}>
       <StatusBar light={isDark} />
 
       <ScreenHeader title="Activity Detail" showBack />

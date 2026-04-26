@@ -41,7 +41,7 @@ export default function Home() {
   const iconBtn = isDark ? 'bg-white/10'                : 'bg-white border border-mist/40'
 
   return (
-    <div className={`flex flex-col h-full ${bg} transition-colors duration-500`}>
+    <div className={`flex flex-col min-h-screen ${bg} transition-colors duration-500`}>
       <StatusBar light={isDark} />
 
       <div className="flex-1 overflow-y-auto phone-scroll pb-2">

@@ -1,8 +1,31 @@
 import { useApp } from '../context/AppContext'
+import { useEffect, useState } from 'react'
 
 export default function PhoneShell({ children }) {
   const { state } = useApp()
+  const [isMobile, setIsMobile] = useState(false)
 
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
+
+  // On real mobile — fullscreen, no shell
+  if (isMobile) {
+    return (
+      <div className={`
+        w-full min-h-screen overflow-y-auto
+        transition-colors duration-500
+        ${state.sleepZoneActive ? 'bg-[#0D1117]' : 'bg-cream'}
+      `}>
+        {children}
+      </div>
+    )
+  }
+
+  // On desktop — show iPhone shell
   return (
     <div className="min-h-screen bg-[#0F1822] flex items-center justify-center p-4">
       <div

@@ -24,7 +24,7 @@ export default function AllActivities() {
   const cardBg  = isDark ? 'bg-white/5 border-white/10' : 'bg-white border-mist/40'
 
   return (
-    <div className={`flex flex-col h-full ${bg} transition-colors duration-500`}>
+    <div className={`flex flex-col min-h-screen ${bg} transition-colors duration-500`}>
       <StatusBar light={isDark} />
 
       <div className="flex items-center gap-3 px-6 pb-5 flex-shrink-0">

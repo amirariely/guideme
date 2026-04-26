@@ -60,7 +60,7 @@ export default function Onboard3() {
   }
 
   return (
-    <div className="flex flex-col h-full bg-cream">
+    <div className="flex flex-col min-h-screen bg-cream">
       <StatusBar />
       <div className="flex-1 flex flex-col px-7 overflow-y-auto phone-scroll">
         <div className="flex items-center gap-3 mb-4">

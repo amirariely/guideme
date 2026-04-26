@@ -67,7 +67,7 @@ export default function Onboard2() {
   }
 
   return (
-    <div className="flex flex-col h-full bg-cream">
+    <div className="flex flex-col min-h-screen bg-cream">
       <StatusBar />
 
       <div className="flex-1 flex flex-col px-7 overflow-y-auto phone-scroll pb-4">

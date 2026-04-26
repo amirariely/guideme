@@ -76,7 +76,7 @@ export default function Chat() {
   }
 
   return (
-    <div className={`flex flex-col h-full ${bg} transition-colors duration-500`}>
+    <div className={`flex flex-col min-h-screen ${bg} transition-colors duration-500`}>
       <StatusBar light={isDark} />
       <ScreenHeader title="Ask GuideMe" subtitle="Science-backed answers, 24/7" />
 
